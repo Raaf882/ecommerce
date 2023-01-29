@@ -23,21 +23,22 @@
                 </tbody>
             </table>
             <div>
-                <form action="/action_page.php">
+                <form action="/orderplace" method="POST">
+                    @csrf
                     <div class="form-group">
                         <label for=""> Address:</label>
-                        <textarea type="" placeholder="Enter your address" class="form-control" id=""></textarea>
+                        <textarea name="address" placeholder="Enter your address" class="form-control" id=""></textarea>
                     </div>
                     <div class="form-group">
                         <label for="">Payment Method:</label>
                         <p>
-                            <input type="radio" class="" name="payment"> <span class=""><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-credit-card" viewBox="0 0 16 16">
+                            <input type="radio" class="" value="CreditCard" name="payment"> <span class=""><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-credit-card" viewBox="0 0 16 16">
                                 <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1H2zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V7z"/>
                                 <path d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-1z"/>
                               </svg> <i class="bi bi-credit-card">Credit Card</i></span>
                         </p>
                         <p>
-                            <input type="radio" class="" name="payment"> <span><svg
+                            <input type="radio" class="" value="paypal" name="payment"> <span><svg
                                     xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                     class="bi bi-paypal" viewBox="0 0 16 16">
                                     <path
@@ -45,7 +46,7 @@
                                 </svg> <i class="bi bi-paypal">Pay Pal</i></span>
                         </p>
                         <p>
-                            <input type="radio" class="" name="payment"> <span><svg
+                            <input type="radio" class="" value="cash" name="payment"> <span><svg
                                     xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                     class="bi bi-cash-stack" viewBox="0 0 16 16">
                                     <path d="M1 3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1H1zm7 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4z" />
