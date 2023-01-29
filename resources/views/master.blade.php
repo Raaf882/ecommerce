@@ -66,5 +66,16 @@
     .go{
         float: right;
     }
+    .icons{
+
+    }
+    .panel-body{
+        display: relative;
+        
+    }
+    .contact{
+        font-size: 20px;
+        margin: 20px 0 0 20px;
+    }
 </style>
 </html>

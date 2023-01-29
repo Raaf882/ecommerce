@@ -24,7 +24,10 @@ if (Session::has('user')) {
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="/">Home </a></li>
+                @if (Session::has('user'))
                 <li class=""><a href="/myorders">Orders </a></li>
+                @endif
+                
             </ul>
             <form action="/search" class="navbar-form navbar-left">
                 <div class="form-group">
@@ -33,12 +36,13 @@ if (Session::has('user')) {
                 <button type="submit" class="btn btn-default">Search</button>
             </form>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="/cart"><span class="glyphicon glyphicon-shopping-cart"></span> Cart({{ $total }})</a></li>
                 @if (Session::has('user'))
+                <li><a href="/cart"><span class="glyphicon glyphicon-shopping-cart"></span> Cart({{ $total }})</a></li>
                 <li><a href="#"><span class="glyphicon glyphicon-user"></span> {{Session::get('user')['name']}}</a></li>
                 <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
                 @else
-                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                <li><a href="/"><span class="glyphicon glyphicon-shopping-cart"></span> Cart({{ $total }})</a></li>
+                <li><a href="/register"><span class="glyphicon glyphicon-user"></span> Register</a></li>
                 <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                 @endif
 
